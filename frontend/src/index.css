@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active hr {
+    display: block;
+}
+
+
+.active i{
+    border-top: 2px solid yellow;
+    border-bottom: 2px solid green;
+    padding: 5px 7px;
+    border-radius: 50%;
+}
+
+.plans {
+    border: 1px solid rgb(221, 218, 214);
+       /* border-top: 1px solid green;
+       border-bottom: 1px solid yellow;
+       border-left: 1px solid purple;
+       border-right: 1px solid blue;   */
+}
+
+.profile-border{
+    border: 4px solid white;
+    padding: 5px 7px;
+    border-radius: 50%;
+}
+
+
+.navbar-icon{
+ font-size: 1.2rem;
+}
+
+.rounded{
+    border-radius: 10px;
+}
+
+.box{
+    box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.10);
+}
+
+
+.box-2{
+    font-size: 1.5rem;
+}
+
+.box-b{
+    border: 1px solid purple;
+}
+
+.profile_info{
+    border-right: 1px solid whitesmoke;
+}
+
+.menu_box{
+    border-right: 1px solid rgb(221, 218, 214);
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.menu_link_hover:hover{
+ background-color: black;
+ color: white;
+ cursor: pointer;
+}
+
+
+.box-availableBalance{
+    background: #833AB4;
+}
