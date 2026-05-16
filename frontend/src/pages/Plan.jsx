@@ -24,7 +24,7 @@ const Plan = () => {
   },[token]);
 
   return (
-    <div className='mb-[100px]'>
+    <div className='mb-[100px] text-center'>
 
       <div className='py-[70px]'>
         <h1 className=' text-[20px] font-bold text-center'>Investment Offers</h1>
@@ -50,7 +50,7 @@ const Plan = () => {
                     <h1 className='font-bold'>{plan.investmentRange}</h1>
                     {
                       plan.locked ? 
-                      <button className='text-[0.7rem] font-bold bg-red-800 text-white px-6 py-3 rounded-full'><i class="fa-solid fa-lock"></i> &nbsp; Locked</button> : 
+                      <button className='text-[0.7rem] font-bold bg-red-500 text-white px-6 py-3 rounded-full'><i class="fa-solid fa-lock"></i> &nbsp; Locked</button> : 
                       <button className='text-[0.7rem] font-bold bg-indigo-800 text-white px-6 py-3 rounded-full'>Invest Now</button>
                     }
                   </div>
