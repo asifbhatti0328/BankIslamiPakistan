@@ -27,7 +27,7 @@ const BindAccount = () => {
 
     try {
       if (userToken) {
-        const response = await axios.post(backend_Url + '/withdraw/bindAccount', { userId, bindMethod, bindAccountTitle, bindAccountNo });
+        const response = await axios.post(backend_Url + '/withdraw/bindAccount', { userId, bindMethod, bindAccountTitle, bindAccountNo },{headers: {token} });
         console.log(response.data);
         if (response.data.success) {
           navigate('/withdrawal')

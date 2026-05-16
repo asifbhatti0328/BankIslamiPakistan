@@ -8,12 +8,16 @@ import findUserRouter from './routes/findUserRoute.js';
 import {findDepositsRouter,depositRouter} from './routes/depositRoute.js'
 import {withdrawalRouter} from './routes/withdrawalRoute.js';
 import {bindAccountRouter,findAccountRouter} from './routes/bindAccount.js'
+import connectCloudinary from './config/cloudinary.js'
+
 
 
 //app config
 const app = express();
 const port = process.env.PORT || 5000;
 connectDb();
+connectCloudinary();
+
 
 
 

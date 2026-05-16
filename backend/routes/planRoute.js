@@ -8,7 +8,6 @@ const findPlanRouter= express.Router();
 
 
 
-
 createPlanRouter.post('/investment-plan',createPlan);
 findPlanRouter.get('/investment-plans',findPlan);
 

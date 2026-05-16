@@ -57,7 +57,7 @@ const Withdrawal = () => {
       if (!userToken) {
         return null
       }
-      const response = await axios.post(backend_Url + '/withdraw/findAccount', { userId });
+      const response = await axios.post(backend_Url + '/withdraw/findAccount', { userId },{headers: {token} });
       console.log(response.data.bindAccount);
       setBindAccountData(response.data.bindAccount);
     } catch (error) {

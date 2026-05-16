@@ -1,5 +1,6 @@
 import express from 'express'
 import {depositUser,findDepositsUser} from '../controllers/depositController.js'
+import authUser from '../middlewares/auth.js'
 
 
 
@@ -8,8 +9,8 @@ const findDepositsRouter= express.Router();
 
 
 
-depositRouter.post('/deposit',depositUser);
-findDepositsRouter.post('/deposits-records',findDepositsUser);
+depositRouter.post('/deposit',authUser,depositUser);
+findDepositsRouter.post('/deposits-records',authUser,findDepositsUser);
 
 
 export  {findDepositsRouter,depositRouter};

@@ -51,7 +51,7 @@ const Plan = () => {
                     {
                       plan.locked ? 
                       <button className='text-[0.7rem] font-bold bg-red-500 text-white px-6 py-3 rounded-full'><i class="fa-solid fa-lock"></i> &nbsp; Locked</button> : 
-                      <button className='text-[0.7rem] font-bold bg-indigo-700 text-white px-6 py-3 rounded-full'>Invest Now</button>
+                      <button className='text-[0.7rem] font-bold bg-indigo-800 text-white px-6 py-3 rounded-full'>Invest Now</button>
                     }
                   </div>
                 </div>

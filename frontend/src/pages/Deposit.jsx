@@ -27,7 +27,7 @@ const Deposit = () => {
     setUserToken(token);
     try {
       if (userToken) {
-        const response = await axios.post(backend_Url + '/deposit', { userId,accountHolderName, accountNumber, depositAmount, depositMethod });
+        const response = await axios.post(backend_Url + '/deposit', { userId,accountHolderName, accountNumber, depositAmount, depositMethod },{headers: {token} });
         console.log(response.data);
         if (response.data.success) {
               navigate('/deposits-records')
