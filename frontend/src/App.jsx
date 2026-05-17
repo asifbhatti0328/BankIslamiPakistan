@@ -65,7 +65,7 @@ const App = () => {
               <Progress />
             </PrivateRoute>
           } />
-        <Route path='/invest'
+        <Route path='/plan'
           element={
             <PrivateRoute>
               <Plan />

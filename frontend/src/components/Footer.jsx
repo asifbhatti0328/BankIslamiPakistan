@@ -12,7 +12,7 @@ const Footer = () => {
          </div>
          </NavLink>
 
-         <NavLink to={'/invest'}>
+         <NavLink to={'/plan'}>
          <div className='flex flex-col items-center gap-1 px-7'>
          <i class="fa-solid  navbar-icon fa-money-bill-transfer md:hidden text-blue-900"></i>
          <p className='text-blue-900'>Invest</p>
