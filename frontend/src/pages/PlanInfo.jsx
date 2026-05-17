@@ -32,8 +32,8 @@ const PlanInfo = () => {
           <h1 className=' text-[0.8rem] font-bold text-center text-blue-500'> Available Balance : PKR 50000 </h1>
           <h1 className=' text-3xl pt-3 font-bold text-center text-yellow-500'>PKR {investAmount} </h1>
 
-          <h1 className=' font-1xl py-2 font-bold text-center'>Please Add Amount between</h1>
-          <h1 className=' font-1xl py-2 font-bold text-center'>{plan.investmentRange}</h1>
+          <h1 className=' mt-3 font-1xl font-bold text-center'>Please Add Amount between</h1>
+          <h1 className=' font-1xl mb-2 font-bold text-center'>{plan.investmentRange}</h1>
 
           <div className='flex items-center justify-center'>
             <input required min={plan.min} max={plan.max} value={investAmount} onChange={onChangeHandler} className='w-[50%] px-5 py-5 border rounded' type="Number" />
