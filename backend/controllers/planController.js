@@ -5,7 +5,7 @@ import planModel from '../models/planModel.js'
 const createPlan = async (req, res) => {
     try {
 
-        const { title, description, returnRate, duration, investmentRange, locked, investTime, investedPeople} = req.body;
+        const { title, description, returnRate, duration, investmentRange, locked, investTime, investedPeople,min,max} = req.body;
         const newPlan = new planModel({
             title,
             description,
@@ -15,6 +15,8 @@ const createPlan = async (req, res) => {
             locked,
             investTime,
             investedPeople,
+            min,
+            max,
         });
 
         const plan = await newPlan.save();

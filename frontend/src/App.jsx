@@ -18,6 +18,7 @@ import Plan from './pages/Plan'
 import Menu from './pages/Menu'
 import DepositsRecords from './pages/DepositsRecords'
 import BindAccount from './pages/BindAccount'
+import PlanInfo from './pages/PlanInfo'
 
 const App = () => {
 
@@ -88,6 +89,13 @@ const App = () => {
           element={
             <PrivateRoute>
               <BindAccount />
+            </PrivateRoute>
+          } />
+
+          <Route path='/plan-info'
+          element={
+            <PrivateRoute>
+              <PlanInfo />
             </PrivateRoute>
           } />
 
