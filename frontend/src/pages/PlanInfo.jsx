@@ -36,7 +36,7 @@ const PlanInfo = () => {
           <h1 className=' font-1xl mb-2 font-bold text-center'>{plan.investmentRange}</h1>
 
           <div className='flex items-center justify-center'>
-            <input placeholder='Amount' required min={plan.min} max={plan.max} value={investAmount} onChange={onChangeHandler} className='w-[50%] px-5 py-5 border rounded' type="Number" />
+            <input placeholder={plan.investmentRange} required min={plan.min} max={plan.max} value={investAmount} onChange={onChangeHandler} className='w-[50%] px-5 py-5 border rounded' type="Number" />
           </div>
 
 
