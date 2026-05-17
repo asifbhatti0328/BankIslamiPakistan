@@ -87,7 +87,7 @@ const Withdrawal = () => {
           <h1 className=' font-1xl py-2 font-bold text-center'>Enter Amount</h1>
 
           <div className='flex items-center justify-center'>
-            <input required min={1} max={500000} value={withdrawalInput} onChange={withdrawalInputChnage} className='w-[50%] px-5 py-5 border rounded' type="Number" />
+            <input placeholder='Amount' required min={1} max={500000} value={withdrawalInput} onChange={withdrawalInputChnage} className='w-[50%] px-5 py-5 border rounded' type="Number" />
           </div>
 
           <div className='flex items-center justify-between mt-10'>
