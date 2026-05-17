@@ -19,13 +19,13 @@ const PlanInfo = () => {
 
 
   return (
-    <div className='mt-[5rem]'>
+    <div className='mt-[6rem]'>
       <div className='flex h-[2rem] pl-2 w-[80%] items-center justify-between'>
         <NavLink to={'/invest'}>
           <i class="fa fa-chevron-left mr-[4rem] ml-[1rem] font-bold text-black" aria-hidden="true"></i>
         </NavLink>
 
-        <h1 className='text-[0.8rem] font-bold text-black'>{plan.title}</h1>
+        <h1 className='text-1xl font-bold text-black'>{plan.title}</h1>
       </div>
       <form action="">
         <div className='p-3 pt-4'>
