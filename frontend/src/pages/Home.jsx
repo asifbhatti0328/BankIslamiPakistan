@@ -6,11 +6,11 @@ import { ShopContext } from '../context/shopContext'
 
 const Home = () => {
   const { token, backend_Url, } = useContext(ShopContext);
-  const [userData, setuserData] = useState(()=> {
-    const savedUserData= localStorage.getItem('userData');
+  const [userData, setuserData] = useState(() => {
+    const savedUserData = localStorage.getItem('userData');
     return savedUserData ? JSON.parse(savedUserData) : [];
   })
-;
+    ;
 
   const loaduserData = async () => {
     try {
@@ -28,12 +28,12 @@ const Home = () => {
 
   useEffect(() => {
     loaduserData();
- }, []) 
+  }, [])
 
 
 
 
- 
+
 
   const [show, setshow] = useState(false);
 
@@ -66,17 +66,20 @@ const Home = () => {
               </div>
             </div>
 
-            <div onClick={data}>
-              {show ? <h1 className='mr-[5rem] hide cursor-pointer'><i class="fa-solid fa-eye-slash"></i> Hide</h1>
-                : <h1 className='mr-[5rem] hide cursor-pointer'> <i class="fa-solid fa-eye"></i> Show</h1>}
-            </div>
+            {
+              userData &&
+              <div onClick={data}>
+                {show ? <h1 className='mr-[5rem] hide cursor-pointer'><i class="fa-solid fa-eye-slash"></i> Hide</h1>
+                  : <h1 className='mr-[5rem] hide cursor-pointer'> <i class="fa-solid fa-eye"></i> Show</h1>}
+              </div>
+            }
 
           </div>
 
         </div>
       </div>
 
-   
+
       <div className='w-[100%] md:hidden h-[7rem] rounded bg-slate-100  my-3 flex items-center justify-around'>
         <NavLink to={'/deposit'}>
 
