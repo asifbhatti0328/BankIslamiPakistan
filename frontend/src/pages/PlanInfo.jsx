@@ -40,7 +40,7 @@ const PlanInfo = () => {
       </div>
       <form action="">
         <div className='p-3 pt-4 mt-8'>
-          <h1 className=' text-[0.8rem] font-bold text-center text-blue-500'> Available Balance : PKR {userdata.availableBalance} </h1>
+          <h1 className=' text-[0.8rem] font-bold text-center text-blue-500'> Available Balance : PKR {userdata.availableBalance.toLocaleString()} </h1>
           <h1 className=' text-3xl pt-3 font-bold text-center text-yellow-500'>PKR {investAmount} </h1>
 
           <h1 className=' mt-3 font-1xl font-bold text-center'>Please Add Amount between</h1>
