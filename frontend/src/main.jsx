@@ -5,6 +5,10 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import ShopContextProvider from "./context/shopContext.jsx"
 
+ 
+document.addEventListener("contextmenu", (e)=> {
+  e.preventDefault();
+})
 
 
 createRoot(document.getElementById('root')).render(
