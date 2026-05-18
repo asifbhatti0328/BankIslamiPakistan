@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 import axios from 'axios'
 import { ShopContext } from '../context/shopContext'
+import Message from '../pages/Message';
 
 
 const Home = () => {
@@ -76,6 +77,8 @@ const Home = () => {
         </div>
       </div>
 
+      <Message />
+   
       <div className='w-[100%] md:hidden h-[7rem] rounded bg-slate-100  my-3 flex items-center justify-around'>
         <NavLink to={'/deposit'}>
 
@@ -144,7 +147,7 @@ const Home = () => {
           </div>
         </a>
 
-        <a href="https://wa.me/923275549545?text=Welcome to WhatsApp BankIslami Pakistan. How can I help you?%20">
+        <a href="https://wa.me/923019224386?text=Welcome to WhatsApp BankIslami Pakistan. How can I help you?%20">
           <div className='h-[5rem] w-[5rem] border rounded box flex items-center justify-center'>
             <div>
               <div className='flex items-center justify-center'>

@@ -4,7 +4,8 @@ import { useState } from 'react'
 import axios from 'axios'
 import { ShopContext } from '../context/shopContext'
 import TextField from '@mui/material/TextField';
-import {assets} from '../assets/assets'
+import { assets } from '../assets/assets'
+import Message from '../pages/Message'
 
 
 
@@ -12,6 +13,8 @@ const Login = () => {
   const { token, setToken, navigate, backend_Url, } = useContext(ShopContext);
   const [phone, setphone] = useState('');
   const [password, setpassword] = useState('');
+  const [msg, setMsg] = useState(null);
+
 
 
   useEffect(() => {
@@ -32,10 +35,13 @@ const Login = () => {
         setToken(response.data.token);
         localStorage.setItem('token', response.data.token);
       } else {
+        setMsg(response.data.message);
+        setTimeout(()=> setMsg(null),3000);
         console.log(response.data.message);
       }
 
     } catch (error) {
+      setMsg(error.message);
       console.log(error.message);
     }
   }
@@ -44,8 +50,11 @@ const Login = () => {
 
   return (
     <div className='py-[0px] pb-[70px]'>
+      {
+        msg ? <Message msg={msg} /> : null
+      }
       <form onSubmit={onSubmitHandler} className='flex flex-col items-center w-[90%] sm:max-w-96 m-auto mt-14 gap-4 text-gray-800' action="">
-                <img className='h-[150px] w-[150px] rounded-full' src={assets.logo_login} alt="" />
+        <img className='h-[150px] w-[150px] rounded-full' src={assets.logo_login} alt="" />
         <div className='inline-flex items-center gap-2 mb-2'>
           <p className='prata-regular text-black text-3xl font-bold'>Login</p>
         </div>

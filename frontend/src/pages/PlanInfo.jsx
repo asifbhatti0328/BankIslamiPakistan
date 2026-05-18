@@ -6,6 +6,12 @@ const PlanInfo = () => {
   const [investAmount, setinvestAmount] = useState('');
   const location = useLocation();
   const plan = location.state.plan;
+  let profit = (investAmount * plan.returnRate) / 100;
+
+  const savedUserData = localStorage.getItem('userData');
+  const userdata = (JSON.parse(savedUserData));
+  const userId = userdata._id;
+
 
   const onChangeHandler = (e) => {
     if (e.target.value <= plan.max) {
@@ -15,8 +21,13 @@ const PlanInfo = () => {
   }
 
 
-  let profit = (investAmount * plan.returnRate) / 100;
 
+
+  const investmentHandler = () => {
+    if (investAmount < plan.min || investAmount > plan.max) {
+      alert(`Please enter an amount between ${plan.investmentRange}`);
+    }
+  };
 
   return (
     <div className='mt-[5rem]'>
@@ -29,7 +40,7 @@ const PlanInfo = () => {
       </div>
       <form action="">
         <div className='p-3 pt-4 mt-8'>
-          <h1 className=' text-[0.8rem] font-bold text-center text-blue-500'> Available Balance : PKR 50000 </h1>
+          <h1 className=' text-[0.8rem] font-bold text-center text-blue-500'> Available Balance : PKR {userdata.availableBalance} </h1>
           <h1 className=' text-3xl pt-3 font-bold text-center text-yellow-500'>PKR {investAmount} </h1>
 
           <h1 className=' mt-3 font-1xl font-bold text-center'>Please Add Amount between</h1>
@@ -47,7 +58,7 @@ const PlanInfo = () => {
 
 
           <div className='py-10 mb-10'>
-            <button className='w-[100%] opacity-90 py-4 text-1xl font-bold text-white bg-blue-900 border-none rounded'>Invest</button>
+            <button onClick={investmentHandler} className='w-[100%] opacity-90 py-4 text-1xl font-bold text-white bg-blue-900 border-none rounded'>Invest</button>
           </div>
 
         </div>
