@@ -62,16 +62,17 @@ const Home = () => {
 
               <div className='py-1'>
                 <h1>AvailableBalance</h1>
-                {show ? <h1 className='text-2xl font-bold'>PKR {userData.availableBalance.toLocaleString()}<span className='text-[15px]'>.00</span></h1> : <h1 className='text-2xl font-bold'>*********</h1>}
+                {show ? <h1 className='text-1xl font-bold w-full'>PKR {userData.availableBalance.toLocaleString()}<span className='text-[15px]'>.00</span></h1> : <h1 className='text-2xl font-bold'>*********</h1>}
               </div>
             </div>
 
             {
-              userData &&
+              userData.availableBalance ?
               <div onClick={data}>
                 {show ? <h1 className='mr-[5rem] hide cursor-pointer'><i class="fa-solid fa-eye-slash"></i> Hide</h1>
                   : <h1 className='mr-[5rem] hide cursor-pointer'> <i class="fa-solid fa-eye"></i> Show</h1>}
               </div>
+              : null
             }
 
           </div>
