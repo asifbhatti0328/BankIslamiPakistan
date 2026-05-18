@@ -16,7 +16,7 @@ const loginUser = async (req, res) => {
         const user= await userModel.findOne({phone});
 
         if(!user) {
-            return res.json({success:false, message: "user doesn't exists"});
+            return res.json({success:false, message: "User doesn't exists"});
         }
 
         const isMatch= await bcrypt.compare(password,user.password);
@@ -58,10 +58,6 @@ const registerUser = async (req, res) => {
             return res.json({ success: false, message: "Please enter a valid email" });
         }
 
-        //validating strong password
-        if (password.length < 8) {
-            return res.json({ success: false, message: "Please enter a strong password" });
-        }
 
         //validating phone format
         if (!validator.isMobilePhone(phone)) {
@@ -69,9 +65,16 @@ const registerUser = async (req, res) => {
         }
 
         //validating strong phone
-        if (phone.length < 11) {
+        if (phone.length < 11 || phone.length > 11) {
             return res.json({ success: false, message: "Please enter a 11 digit number" });
         }
+
+
+                //validating strong password
+        if (password.length < 8) {
+            return res.json({ success: false, message: "Please enter a 8 character password" });
+        }
+
 
 
 

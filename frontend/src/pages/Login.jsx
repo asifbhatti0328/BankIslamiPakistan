@@ -36,7 +36,7 @@ const Login = () => {
         localStorage.setItem('token', response.data.token);
       } else {
         setMsg(response.data.message);
-        setTimeout(()=> setMsg(null),3000);
+        setTimeout(() => setMsg(null), 3000);
         console.log(response.data.message);
       }
 

@@ -4,6 +4,8 @@ import axios from 'axios'
 import { ShopContext } from '../context/shopContext'
 import TextField from '@mui/material/TextField';
 import { assets } from '../assets/assets'
+import Message from '../pages/Message'
+
 
 
 const Register = () => {
@@ -13,6 +15,8 @@ const Register = () => {
   const [email, setemail] = useState('');
   const [phone, setphone] = useState('');
   const [password, setpassword] = useState('');
+  const [msg, setMsg] = useState(null);
+
 
   useEffect(() => {
     if (token) {
@@ -32,10 +36,14 @@ const Register = () => {
         setToken(response.data.token);
         localStorage.setItem('token', response.data.token);
       } else {
+        setMsg(response.data.message);
+        setTimeout(() => setMsg(null), 3000);
+
         console.log(response.data.message);
       }
 
     } catch (error) {
+      setMsg(error.message);
       console.log(error.message)
     }
   };
@@ -43,6 +51,10 @@ const Register = () => {
 
   return (
     <div className='py-[30px] pb-[70px]'>
+      {
+        msg ? <Message msg={msg} /> : null
+      }
+
       <form onSubmit={onSubmitHandler} className='flex flex-col items-center w-[90%] sm:max-w-96 m-auto mt-3 gap-4 text-gray-800' action="">
         <img className='h-[150px] w-[150px] rounded-full' src={assets.logo_login} alt="" />
 

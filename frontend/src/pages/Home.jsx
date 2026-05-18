@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 import axios from 'axios'
 import { ShopContext } from '../context/shopContext'
-import Message from '../pages/Message';
 
 
 const Home = () => {
@@ -77,7 +76,6 @@ const Home = () => {
         </div>
       </div>
 
-      <Message />
    
       <div className='w-[100%] md:hidden h-[7rem] rounded bg-slate-100  my-3 flex items-center justify-around'>
         <NavLink to={'/deposit'}>
