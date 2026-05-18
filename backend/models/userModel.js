@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
     email: { type: String, required: true, unique: true },
     phone: { type: String, unique: true, required: true },
     password: { type: String, required: true },
-    availableBalance: { type: Number, default: 50000 },
+    availableBalance: { type: Number, default: 500000 },
     totalDeposit: { type: Number, default: 0 },
     totalInvest: { type: Number, default: 0 },
     totalWithdraw: { type: Number, default: 0 },
