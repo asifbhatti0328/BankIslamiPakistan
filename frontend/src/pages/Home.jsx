@@ -62,7 +62,7 @@ const Home = () => {
 
               <div className='py-1'>
                 <h1>AvailableBalance</h1>
-                {show ? <h1 className='text-1xl font-bold w-full'>PKR {userData.availableBalance.toLocaleString()}<span className='text-[15px]'>.00</span></h1> : <h1 className='text-2xl font-bold'>*********</h1>}
+                {show ? <h1 className='text-2xl font-bold w-full'>PKR {userData.availableBalance.toLocaleString()}<span className='text-[15px]'></span></h1> : <h1 className='text-2xl font-bold'>*********</h1>}
               </div>
             </div>
 
