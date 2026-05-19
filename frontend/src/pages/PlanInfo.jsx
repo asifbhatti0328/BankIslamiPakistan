@@ -49,6 +49,7 @@ const PlanInfo = () => {
     if (investAmount < plan.min || investAmount > plan.max) {
       setMsg(`Please enter an amount between ${plan.investmentRange}`);
       setTimeout(() => setMsg(null), 5000);
+      return;
     }
 
       if (investAmount > userdata.availableBalance) {
@@ -89,7 +90,7 @@ const PlanInfo = () => {
           <h1 className=' font-1xl mb-2 font-bold text-center'>{plan.investmentRange}</h1>
 
           <div className='flex items-center justify-center'>
-            <input placeholder={plan.investmentRange} required min={plan.min} max={plan.max} value={investAmount} onChange={onChangeHandler} className='w-[60%] px-5 py-5 border rounded' type="Number" />
+            <input placeholder={plan.investmentRange}  value={investAmount} onChange={onChangeHandler} className='w-[60%] px-5 py-5 border rounded' type="Number" />
           </div>
 
 
