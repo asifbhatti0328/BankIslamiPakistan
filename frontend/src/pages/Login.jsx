@@ -29,6 +29,30 @@ const Login = () => {
   const onSubmitHandler = async (event) => {
     event.preventDefault();
 
+            if(phone === '' && password === ''){
+      setMsg('Please fill in all fields');
+      setTimeout(() => setMsg(null), 5000);
+      return;
+    }
+
+
+        if(phone === ''){
+      setMsg('Please enter phone number');
+      setTimeout(() => setMsg(null), 5000);
+      return;
+    }
+
+    if(password === ''){
+      setMsg('Please enter password');
+      setTimeout(() => setMsg(null), 5000);
+      return;
+    }
+
+
+
+
+
+
     try {
       const response = await axios.post(backend_Url + '/user/login', { phone, password });
       if (response.data.success) {
@@ -61,11 +85,11 @@ const Login = () => {
         <div className='flex items-center justify-end w-full'>
           <h3 className='text-1xl font-bold px-2'>فون نمبر درج کریں</h3>
         </div>
-        <TextField label="Phone" variant="outlined" onChange={(e) => setphone(e.target.value)} value={phone} className='w-full px-3 py-2' type="Phone" required />
+        <TextField label="Phone" variant="outlined" onChange={(e) => setphone(e.target.value)} value={phone} className='w-full px-3 py-2' type="Phone" />
         <div className='flex items-center justify-end w-full'>
           <h3 className='text-1xl font-bold px-2'>پاس ورڈ درج کریں</h3>
         </div>
-        <TextField label="Password" variant="outlined" onChange={(e) => setpassword(e.target.value)} value={password} className='w-full px-3 py-2' type="password" required />
+        <TextField label="Password" variant="outlined" onChange={(e) => setpassword(e.target.value)} value={password} className='w-full px-3 py-2' type="password" />
         <div className='w-full flex justify-between text-sm mt-[-8px]'>
           <p className='cursor-pointer'>Forgot your password?</p>
           <NavLink to={'/user/register'}>

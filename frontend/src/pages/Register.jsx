@@ -30,6 +30,37 @@ const Register = () => {
   const onSubmitHandler = async (event) => {
     event.preventDefault();
 
+    if (fullName === '' && email === '' && phone === '' && password === '') {
+      setMsg('Please fill in all fields');
+      setTimeout(() => setMsg(null), 5000);
+      return;
+    }
+
+    if (fullName === '') {
+      setMsg('Please enter your full name');
+      setTimeout(() => setMsg(null), 5000);
+      return;
+    }
+
+    if (email === '') {
+      setMsg('Please enter your email');
+      setTimeout(() => setMsg(null), 5000);
+      return;
+    }
+
+    if (phone === '') {
+      setMsg('Please enter your phone number');
+      setTimeout(() => setMsg(null), 5000);
+      return;
+    }
+
+    if (password === '') {
+      setMsg('Please enter a password');
+      setTimeout(() => setMsg(null), 5000);
+      return;
+    }
+
+
     try {
       const response = await axios.post(backend_Url + '/user/register', { fullName, email, phone, password });
       if (response.data.success) {
@@ -65,19 +96,19 @@ const Register = () => {
         <div className='flex items-center justify-end w-full'>
           <h3 className='text-1xl font-bold px-2'>پورا نام درج کریں</h3>
         </div>
-        <TextField label="Full Name" variant="outlined" onChange={(e) => setfullName(e.target.value)} value={fullName} className='w-full px-3 py-2' type="text" required />
+        <TextField label="Full Name" variant="outlined" onChange={(e) => setfullName(e.target.value)} value={fullName} className='w-full px-3 py-2' type="text"/>
         <div className='flex items-center justify-end w-full'>
           <h3 className='text-1xl font-bold px-2'>ای میل درج کریں</h3>
         </div>
-        <TextField label="Email" variant="outlined" onChange={(e) => setemail(e.target.value)} value={email} className='w-full px-3 py-2' type="email" required />
+        <TextField label="Email" variant="outlined" onChange={(e) => setemail(e.target.value)} value={email} className='w-full px-3 py-2' type="email" />
         <div className='flex items-center justify-end w-full'>
           <h3 className='text-1xl font-bold px-2'>فون نمبر درج کریں</h3>
         </div>
-        <TextField label="Phone" variant="outlined" onChange={(e) => setphone(e.target.value)} value={phone} className='w-full px-3 py-2' type="number" required />
+        <TextField label="Phone" variant="outlined" onChange={(e) => setphone(e.target.value)} value={phone} className='w-full px-3 py-2' type="number" />
         <div className='flex items-center justify-end w-full'>
           <h3 className='text-1xl font-bold px-2'>پاس ورڈ درج کریں</h3>
         </div>
-        <TextField label="Password" variant="outlined" onChange={(e) => setpassword(e.target.value)} value={password} className='w-full px-3 py-2' type="password" required />
+        <TextField label="Password" variant="outlined" onChange={(e) => setpassword(e.target.value)} value={password} className='w-full px-3 py-2' type="password" />
         <div className='w-full flex justify-between text-sm mt-[-8px]'>
           <NavLink to={'/user/login'}>
             <p className="cursor-pointer">Login Here</p>
