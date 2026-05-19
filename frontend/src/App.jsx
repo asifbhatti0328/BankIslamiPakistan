@@ -92,7 +92,7 @@ const App = () => {
             </PrivateRoute>
           } />
 
-          <Route path='/plan-info'
+          <Route path='/plan-info/:planId'
           element={
             <PrivateRoute>
               <PlanInfo />

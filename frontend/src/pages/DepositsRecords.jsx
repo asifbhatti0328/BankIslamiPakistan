@@ -19,9 +19,6 @@ const DepositsRecords = () => {
       const response = await axios.post(backend_Url + '/deposits-records', { userId },{headers: {token} });
       const deposits= response.data.depositsData;
       setdeposits(deposits.reverse());
-      // for (const deposit of deposits) {
-      //   console.log(deposit);
-      // }
     } catch (error) {
       console.log(error)
     }

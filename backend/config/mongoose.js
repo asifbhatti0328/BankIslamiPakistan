@@ -4,8 +4,8 @@ const connectDb = async()=> {
         console.log('Mongo_Db DataBase connected')
     })
 
-await mongoose.connect(`${process.env.MONGODB_URL}`);
-// await mongoose.connect('mongodb://127.0.0.1:27017/bankIslamiPakistan');
+// await mongoose.connect(`${process.env.MONGODB_URL}`);
+await mongoose.connect('mongodb://127.0.0.1:27017/bankIslamiPakistan');
 
 }
 

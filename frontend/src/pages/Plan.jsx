@@ -6,7 +6,7 @@ import { assets } from '../assets/assets'
 
 
 const Plan = () => {
-  const { token,navigate, backend_Url, } = useContext(ShopContext);
+  const { token, navigate, backend_Url, } = useContext(ShopContext);
   const [investmentPlans, setinvestmentPlans] = useState([]);
 
   const loadInvestmentPlans = async () => {
@@ -21,13 +21,13 @@ const Plan = () => {
 
   useEffect(() => {
     loadInvestmentPlans();
-  },[token]);
+  }, [token]);
 
 
 
-  const handleInvest = (plan) => {
-      navigate('/plan-info', { state: { plan } });
-  }
+  const handleInvest = async (plan) => {
+ navigate(`/plan-info/${plan._id}`);
+    }
 
   return (
     <div className='mb-[100px]'>
@@ -55,9 +55,9 @@ const Plan = () => {
                   <div className='flex justify-between items-center p-2'>
                     <h1 className='font-bold'>{plan.investmentRange}</h1>
                     {
-                      plan.locked ? 
-                      <button className='text-[0.7rem] font-bold bg-red-500 text-white px-6 py-3 rounded-full'><i class="fa-solid fa-lock"></i> &nbsp; Locked</button> : 
-                      <button onClick={() => handleInvest(plan)} className='text-[0.7rem] font-bold bg-indigo-800 text-white px-6 py-3 rounded-full'>Invest Now</button>
+                      plan.locked ?
+                        <button className='text-[0.7rem] font-bold bg-red-500 text-white px-6 py-3 rounded-full'><i class="fa-solid fa-lock"></i> &nbsp; Locked</button> :
+                        <button onClick={()=> handleInvest(plan)} className='text-[0.7rem] font-bold bg-indigo-800 text-white px-6 py-3 rounded-full'>Invest Now</button>
                     }
                   </div>
                 </div>
